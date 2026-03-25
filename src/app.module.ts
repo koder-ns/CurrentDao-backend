@@ -15,6 +15,7 @@ import { ApmModule } from './apm/apm.module';
 import { TracingModule } from './tracing/tracing.module';
 import { ShardingModule } from './database/sharding/sharding.module';
 import { ContractsModule } from './contracts/contracts.module';
+import { ClassificationModule } from './classification/classification.module';
 import { ResponseInterceptor } from './common/interceptors/response.interceptor';
 import { HttpExceptionFilter } from './common/filters/http-exception.filter';
 
@@ -41,6 +42,7 @@ import { HttpExceptionFilter } from './common/filters/http-exception.filter';
     RiskManagementModule,
     CrossBorderModule,
     ContractsModule,
+    ClassificationModule,
   ],
   controllers: [AppController, HealthController],
   providers: [
