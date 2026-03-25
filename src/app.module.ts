@@ -15,6 +15,8 @@ import { ApmModule } from './apm/apm.module';
 import { TracingModule } from './tracing/tracing.module';
 import { ShardingModule } from './database/sharding/sharding.module';
 import { ContractsModule } from './contracts/contracts.module';
+import { ResponseInterceptor } from './common/interceptors/response.interceptor';
+import { HttpExceptionFilter } from './common/filters/http-exception.filter';
 
 @Module({
   imports: [
@@ -41,6 +43,10 @@ import { ContractsModule } from './contracts/contracts.module';
     ContractsModule,
   ],
   controllers: [AppController, HealthController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    ResponseInterceptor,
+    HttpExceptionFilter,
+  ],
 })
 export class AppModule {}
