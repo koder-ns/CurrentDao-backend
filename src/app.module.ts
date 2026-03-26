@@ -15,9 +15,7 @@ import { ApmModule } from './apm/apm.module';
 import { TracingModule } from './tracing/tracing.module';
 import { ShardingModule } from './database/sharding/sharding.module';
 import { ContractsModule } from './contracts/contracts.module';
-import { ClassificationModule } from './classification/classification.module';
-import { ResponseInterceptor } from './common/interceptors/response.interceptor';
-import { HttpExceptionFilter } from './common/filters/http-exception.filter';
+import { ApiGatewayModule } from './gateway/api-gateway.module';
 
 @Module({
   imports: [
@@ -42,7 +40,7 @@ import { HttpExceptionFilter } from './common/filters/http-exception.filter';
     RiskManagementModule,
     CrossBorderModule,
     ContractsModule,
-    ClassificationModule,
+    ApiGatewayModule,
   ],
   controllers: [AppController, HealthController],
   providers: [
@@ -51,4 +49,4 @@ import { HttpExceptionFilter } from './common/filters/http-exception.filter';
     HttpExceptionFilter,
   ],
 })
-export class AppModule {}
+export class AppModule { }
