@@ -15,6 +15,7 @@ import { ApmModule } from './apm/apm.module';
 import { TracingModule } from './tracing/tracing.module';
 import { ShardingModule } from './database/sharding/sharding.module';
 import { ContractsModule } from './contracts/contracts.module';
+import { ApiGatewayModule } from './gateway/api-gateway.module';
 
 @Module({
   imports: [
@@ -39,6 +40,7 @@ import { ContractsModule } from './contracts/contracts.module';
     RiskManagementModule,
     CrossBorderModule,
     ContractsModule,
+    ApiGatewayModule,
   ],
   controllers: [AppController, HealthController],
   providers: [AppService],
