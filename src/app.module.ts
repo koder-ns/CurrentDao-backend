@@ -28,14 +28,7 @@ import { HttpExceptionFilter } from './common/filters/http-exception.filter';
       isGlobal: true,
       load: [databaseConfig, stellarConfig],
     }),
-    ConfigModule.forFeature(databaseConfig),
-    ConfigModule.forFeature(stellarConfig),
-    ScheduleModule.forRoot(),
-    TypeOrmModule.forRootAsync({
-      inject: [databaseConfig.KEY],
-      useFactory: (config: ConfigType<typeof databaseConfig>) => ({
-        ...config,
-      }),
+
     }),
     SecurityModule,
     ApmModule,
